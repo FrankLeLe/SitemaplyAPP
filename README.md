@@ -1,22 +1,54 @@
-# 🗺️ Sitemap Generator
+# 🗺️ Sitemaply
 
-Free XML Sitemap Generator for SEO professionals.
+**Free XML Sitemap Generator - Generate sitemaps in 3 seconds**
 
-## Features
+A fast, free, and easy-to-use XML sitemap generator for SEO professionals and website owners.
 
-- ✅ Free forever (up to 100 pages)
-- ✅ No signup required
-- ✅ Google-compliant XML format
-- ✅ Fast crawling (3 seconds)
-- ✅ Download instantly
+🌐 **Live Demo**: [Coming Soon](https://sitemaply.app)
 
-## Tech Stack
+---
 
-- **Frontend**: Next.js 14, TypeScript, TailwindCSS, Shadcn/ui
-- **Backend**: Python FastAPI, BeautifulSoup
-- **Deployment**: Vercel (Frontend) + Railway (Backend)
+## ✨ Features
 
-## Quick Start
+- 🚀 **Fast Crawling** - Generate sitemaps in seconds
+- 🆓 **100% Free** - No signup, no credit card required
+- 📄 **SEO Ready** - Google-compliant XML format
+- 💾 **Instant Download** - Get your sitemap.xml immediately
+- 🔒 **Privacy First** - We don't store your data
+
+---
+
+## 🎯 How to Use
+
+1. Enter your website URL
+2. Click "Generate Sitemap"
+3. Wait for crawling to complete
+4. Download your sitemap.xml file
+
+**That's it!** Your sitemap is ready to submit to Google Search Console.
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- Next.js 14 (App Router)
+- TypeScript
+- TailwindCSS
+- Shadcn/ui
+
+### Backend
+- Python FastAPI
+- BeautifulSoup4
+- Requests
+
+### Deployment
+- Frontend: Vercel
+- Backend: Railway
+
+---
+
+## 🚀 Self-Host
 
 ### Backend
 
@@ -26,7 +58,7 @@ pip install -r requirements.txt
 python main.py
 ```
 
-API runs on `http://localhost:8000`
+API will run on `http://localhost:8000`
 
 ### Frontend
 
@@ -35,20 +67,21 @@ npm install
 npm run dev
 ```
 
-Frontend runs on `http://localhost:3000`
+Frontend will run on `http://localhost:3000`
 
-## API Endpoints
+---
 
-### POST /api/generate
+## 📦 API Usage
 
-Generate sitemap for a website.
+### Generate Sitemap
+
+**Endpoint**: `POST /api/generate`
 
 **Request**:
 ```json
 {
   "url": "https://example.com",
-  "max_pages": 100,
-  "exclude_paths": ["/admin", "/private"]
+  "max_pages": 100
 }
 ```
 
@@ -59,38 +92,25 @@ Generate sitemap for a website.
   "url": "https://example.com",
   "pages_count": 42,
   "sitemap": "<?xml version=\"1.0\"...>",
-  "sample_pages": ["https://example.com/page1", ...]
+  "sample_pages": [...]
 }
 ```
 
-## Deployment
+---
 
-### Backend (Railway)
+## 📄 License
 
-1. Create new project on Railway
-2. Connect GitHub repo
-3. Set build command: `pip install -r requirements.txt`
-4. Set start command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+MIT License - Feel free to use for personal or commercial projects.
 
-### Frontend (Vercel)
+---
 
-1. Import project on Vercel
-2. Set environment variable: `NEXT_PUBLIC_API_URL`
-3. Deploy
+## 🙏 Support
 
-## Monetization
+If you find this project helpful, consider:
+- ⭐ Starring this repository
+- 🐛 Reporting bugs
+- 💡 Suggesting features
 
-### Free Tier
-- Up to 100 pages
-- Basic XML format
-- Manual download
+---
 
-### Pro ($9 one-time)
-- Unlimited pages
-- Auto-update (weekly)
-- Priority support
-- No ads
-
-## License
-
-MIT
+**Built with ❤️ for SEO professionals**
