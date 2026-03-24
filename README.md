@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🗺️ Sitemap Generator
 
-## Getting Started
+Free XML Sitemap Generator for SEO professionals.
 
-First, run the development server:
+## Features
+
+- ✅ Free forever (up to 100 pages)
+- ✅ No signup required
+- ✅ Google-compliant XML format
+- ✅ Fast crawling (3 seconds)
+- ✅ Download instantly
+
+## Tech Stack
+
+- **Frontend**: Next.js 14, TypeScript, TailwindCSS, Shadcn/ui
+- **Backend**: Python FastAPI, BeautifulSoup
+- **Deployment**: Vercel (Frontend) + Railway (Backend)
+
+## Quick Start
+
+### Backend
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cd backend
+pip install -r requirements.txt
+python main.py
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+API runs on `http://localhost:8000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Frontend
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev
+```
 
-## Learn More
+Frontend runs on `http://localhost:3000`
 
-To learn more about Next.js, take a look at the following resources:
+## API Endpoints
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### POST /api/generate
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Generate sitemap for a website.
 
-## Deploy on Vercel
+**Request**:
+```json
+{
+  "url": "https://example.com",
+  "max_pages": 100,
+  "exclude_paths": ["/admin", "/private"]
+}
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Response**:
+```json
+{
+  "success": true,
+  "url": "https://example.com",
+  "pages_count": 42,
+  "sitemap": "<?xml version=\"1.0\"...>",
+  "sample_pages": ["https://example.com/page1", ...]
+}
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+### Backend (Railway)
+
+1. Create new project on Railway
+2. Connect GitHub repo
+3. Set build command: `pip install -r requirements.txt`
+4. Set start command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+
+### Frontend (Vercel)
+
+1. Import project on Vercel
+2. Set environment variable: `NEXT_PUBLIC_API_URL`
+3. Deploy
+
+## Monetization
+
+### Free Tier
+- Up to 100 pages
+- Basic XML format
+- Manual download
+
+### Pro ($9 one-time)
+- Unlimited pages
+- Auto-update (weekly)
+- Priority support
+- No ads
+
+## License
+
+MIT
